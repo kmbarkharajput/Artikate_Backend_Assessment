@@ -103,7 +103,7 @@ Order
 id
 customer
 tenant
-total_amount
+total
 status
 created_at
 ```
