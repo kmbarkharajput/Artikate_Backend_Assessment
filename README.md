@@ -1,7 +1,6 @@
 # Artikate Backend Assessment
 
 ## Overview
-
 This project is a Django REST Framework backend developed as part of the Artikate Backend Assessment.
 
 The project demonstrates:
@@ -12,6 +11,8 @@ The project demonstrates:
 - Unit tests
 - Docker support
 
+---
+
 ## Technology Stack
 - Python 3.14
 - Django 5.x
@@ -20,14 +21,40 @@ The project demonstrates:
 - Redis
 - SQLite
 - Docker
+- drf-yasg (Swagger)
 
+---
+
+## Project Structure
+```
+artikate_assessment/
+│
+├── artikate/
+│   ├── settings.py
+│   ├── urls.py
+│   ├── celery.py
+│   └── ...
+│
+├── jobs/
+├── orders/
+├── tenants/
+├── tests/
+│
+├── Dockerfile
+├── docker-compose.yml
+├── requirements.txt
+├── manage.py
+└── README.md
+```
+
+---
 
 ## Installation
 
 Clone the repository
 
 ```bash
-git clone 
+git clone <repository-url>
 cd artikate_assessment
 ```
 
@@ -35,6 +62,7 @@ Create virtual environment
 
 ```bash
 python -m venv venv
+```
 
 Activate
 
@@ -42,6 +70,12 @@ Windows
 
 ```bash
 venv\Scripts\activate
+```
+
+Linux
+
+```bash
+source venv/bin/activate
 ```
 
 Install packages
@@ -73,6 +107,8 @@ Server
 http://127.0.0.1:8000
 ```
 
+---
+
 ## Docker
 
 Start Redis
@@ -91,7 +127,6 @@ celery -A artikate worker -l info
 
 ---
 
-
 ## Run Tests
 
 All tests
@@ -108,6 +143,14 @@ python manage.py test tests.test_section1
 
 ---
 
+## Swagger
+
+```
+http://127.0.0.1:8000/swagger/
+```
+
+---
+
 ## API Endpoints
 
 ### Orders
@@ -117,7 +160,6 @@ GET
 ```
 /api/orders/summary/
 ```
-
 
 ### Jobs
 
@@ -152,3 +194,5 @@ GET
 ✔ Docker Support
 
 ✔ Unit Testing
+
+✔ Swagger Documentation
